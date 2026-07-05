@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data and Render Lists</title>
+</head>
+<body>
+    <h1>Data and Render Lists</h1>
+    <form id="dataForm">
+        <select id="dataSelect" name="dataSelect">
+            <option value="">-- Select an option --</option>
+            <option value="MSI">MSI</option>
+            <option value="ASUS">ASUS</option>
+            <option value="HP">HP</option>
+            <option value="Dell">Dell</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+    <table id="result" border="1">
+        <thead>
+            <tr>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td colspan="3">Please select an option and click submit.</td></tr>
+        </tbody>
+    </table>
+    <script>
+
+        const data = [
+            { id: 1, name: 'MSI', Model: 'MSI GF63', Price: '$800' },
+            { id: 2, name: 'ASUS', Model: 'ASUS ROG', Price: '$900' },
+            { id: 3, name: 'HP', Model: 'HP Pavilion', Price: '$700' },
+            { id: 4, name: 'Dell', Model: 'Dell XPS1', Price: '$1000' },
+            { id: 5, name: 'MSI', Model: 'MSI Stealth', Price: '$1200' },
+            { id: 6, name: 'ASUS', Model: 'ASUS ZenBook', Price: '$1100' },
+            { id: 7, name: 'HP', Model: 'HP Spectre', Price: '$1300' },
+            { id: 8, name: 'Dell', Model: 'Dell Inspiron', Price: '$950' },
+            { id: 9, name: 'MSI', Model: 'MSI Raider', Price: '$1500' },
+            { id: 10, name: 'ASUS', Model: 'ASUS TUF', Price: '$850' }
+        ];
+
+        document.getElementById('dataForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const selectedValue = document.getElementById('dataSelect').value;
+            const resultTable = document.getElementById('result').getElementsByTagName('tbody')[0];
+            if (selectedValue) {
+                const filteredItems = data.filter(item => item.name === selectedValue);
+                resultTable.innerHTML = filteredItems.map(item => `
+                    <tr><td>Brand: ${item.name}</td><td>Model: ${item.Model}</td><td>Price: ${item.Price}</td></tr>
+                `).join('');
+            } else {
+                resultTable.innerHTML = `<tr><td>Please select an option.</td></tr>`;
+            }
+        });
+    </script>
+</body>
+</html>
