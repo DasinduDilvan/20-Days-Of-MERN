@@ -1,5 +1,4 @@
 
-
 import { welcomeMessage, logMessage } from "./func.js";
 
 const currentUser = {
