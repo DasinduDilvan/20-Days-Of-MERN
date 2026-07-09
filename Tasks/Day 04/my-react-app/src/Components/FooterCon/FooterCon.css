@@ -1,0 +1,17 @@
+.footer{
+    background-color: #030202;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footertext{
+    list-style-type: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}

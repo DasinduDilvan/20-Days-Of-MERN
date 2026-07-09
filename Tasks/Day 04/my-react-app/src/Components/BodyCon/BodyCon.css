@@ -1,0 +1,10 @@
+.body{
+    padding: 20px;
+    margin-bottom: 60px;
+    text-align: center;
+    width: 80%;
+    position: relative;
+    left: auto;
+    right: auto;
+    transform: translateX(10%);
+}
