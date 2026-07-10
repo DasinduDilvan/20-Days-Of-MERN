@@ -1,0 +1,30 @@
+.counter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  margin-bottom: 0px;
+}
+
+.Header{
+  padding: 17px;
+  color: rgb(228, 228, 237);
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.but{
+  padding: 5px 30px;
+  margin: 5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 26px;
+}
+
+.but:hover{
+  background-color: #0056b3;
+}
